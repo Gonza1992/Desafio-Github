@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: KANIT;
+    src: url(../Tipografias/Kanit/Kanit-ExtraLight.ttf);
+}
+
+/*GRILLA PRINCIPAL*/
+#grilla {
+    background-image: radial-gradient( rgb(13, 52, 70), rgb(113, 173, 181));
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 140px 600px 400px 100px 100px;
+    grid-template-areas:"nav nav"
+                        "galeria galeria"
+                        "musica musica"
+                        "bio lanzamientos"
+                        "footer footer";  
+    gap: 10rem;                      
+}
+/*nombre de areas*/
+#nav {
+    grid-area: nav;
+}
+#galeria {
+    grid-area: galeria;
+}
+#musica {
+    grid-area: musica;
+}
+#bio {
+    grid-area: bio;
+}
+#lanzamientos {
+    grid-area: lanzamientos;
+}
+footer {
+    grid-area: footer;
+}
+
+/*NAVEGACION*/
+#nav {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 100px 100px;
+    grid-template-areas:"logo navegacion"
+                        "titulo navegacion";
+    gap: 100px;
+    align-content: space-between;
+}
+#nav .logo {
+    grid-area: logo;
+    position: absolute;
+    top: -80px;
+}
+#nav .titulo {
+    grid-area: titulo;
+    position: absolute;
+    top: 300px;
+    margin-left: 170px ;
+}
+#nav .navegacion {
+    grid-area: navegacion;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+#nav .logo img {
+    width: 500px;
+    height: 500px;
+}
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+ul li{
+    font-size: 20px;
+    transition: 1s;
+}
+ul li:hover {
+    font-size: 24px;
+}
+.navegacion {
+    display: flex;
+    align-content: center;
+}
+
+
+/*CUERPO*/
+.areas {
+    border: none;
+    border-color: rgb(216, 223, 226) ;
+    margin: 30px;
+    padding: 50px;
+    background-image: radial-gradient( 0, rgb(23, 109, 129, 0.1), rgb(0, 113, 173, 181, 0.3));
+    color: rgb(17, 32, 49) ;
+    font-family: KANIT;
+    font-weight: 500;
+}
+#nav {
+    height: 300px;
+}
+#galeria {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 400px;
+}
+#galeria img {
+    width: 700px;
+    max-height: 500px;
+    object-fit:contain;
+}
+
+#imagen__img {
+    width: 500;
+    height: 400;
+}
+#musica {
+    height: 300px;
+}
+
+.musica {
+    width: 100px;
+}
+.musica__contenido {
+    display: flex;
+    flex-direction: row;
+    object-fit: contain;
+    gap: 100px;
+    transform: translateX(-150px);
+}
+#bio {
+    height: 100px;
+}
+#lanzamientos {
+    height: 100px;
+}
+
+
+
+/*FOOTER*/
+footer {
+    height: 100px;
+}
+.areas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "redes contacto logo";
+    align-content: space-between;
+    justify-content: center;
+    gap: 50px;
+}
+
+@keyframes efectoredes {
+    0% { width: 60px;}
+    100% {width: 65px;}
+    0% { width: 60px;}
+    100% {width: 65px;}
+}
+.areas .redes{
+    grid-area: redes;
+    display: flex;
+    gap: 50px;
+}
+.areas .conacto{
+    grid-area: contacto;
+}
+.contacto {
+    display: flex;
+    justify-content: flex-end;
+    transform: translateX(50px);
+}
+.areas .logo{
+    grid-area: logo;
+    justify-content: end;
+}
+.areas .redes img {
+    width: 50px;
+    height: 50px;
+    transition: 0.2s;
+}
+.areas .redes img:hover {
+    width: 55px;
+    height: 55px;
+}
+.areas .logo img {
+    width: 200px;
+    height: 200px;
+}
+
+.logofoot {
+    transform: translate(200px, -70px)
+}
+
+.subrayado {
+    text-decoration: underline;
+    display: flex;
+    gap: 20px;
+}
+
+.contacto {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+@media screen and (max-width: 800px) {
+    #grilla {
+            background-color: rgb(13, 52, 70);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 325px 600px 400px 200px 200px 100px;
+            grid-template-areas:"nav"
+                            "galeria"
+                            "musica"
+                            "bio"
+                            "lanzamientos"
+                            "footer";  
+            gap: 10rem;      
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        .areas {
+        display: grid;
+        grid-template-columns: auto auto ;
+        grid-template-rows: auto auto;
+        grid-template-areas: "redes logo" "contacto contacto";
+        align-content: space-around;
+        justify-content: center;        
+        }
+        .logofoot {
+            transform: translate(-100px, -70px)
+        }
+        .subrayado {
+            text-decoration: underline;
+            display: flex;
+        }
+        .contacto {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            transform: translateY(-150px);
+        }.areas .redes{
+            grid-area: redes;
+            display: flex;
+            gap: 50px;
+            transform: translateX(-80px);
+        }
+        #bio h3 {
+            transform: translateX(-400px);
+        }
+        #lanzamientos h3 {
+            transform: translateX(-400px);
+        }
+}
+
+@media screen and (max-width: 400px) {
+    #grilla {
+            background-color: rgb(13, 52, 70);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 325px 1200px 800px 100px 100px 100px;
+            grid-template-areas:"nav"
+                            "galeria"
+                            "musica"
+                            "bio"
+                            "lanzamientos"
+                            "footer";  
+            gap: 50px;      
+        }
+        #galeria {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 200px;
+        } 
+        .musica__contenido {
+            display: flex;
+            flex-direction: column;
+            object-fit: contain;
+            gap: 5px;
+        }
+        .areas {
+        display: grid;
+        grid-template-columns: auto ;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "redes" "contacto" "logo";
+        align-content: space-around;
+        justify-content: center;        
+        }
+        .logofoot {
+            transform: translate(-100px, -70px)
+        }
+        .subrayado {
+            text-decoration: underline;
+            display: flex;
+        }
+        .contacto {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            transform: translateY(-150px);
+        }.areas .redes{
+            grid-area: redes;
+            display: flex;
+            gap: 50px;
+            transform: translateX(-80px);
+        }
+}
+
+
+
